@@ -1,0 +1,50 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx/16"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.tpo.LoginController">
+
+    <center>
+        <VBox alignment="CENTER" spacing="10">
+
+            <fx:define>
+                <Insets fx:id="textFieldHorizontalMargin" right="200" left="200"/>
+            </fx:define>
+
+            <Label text="Login with Id and Password"/>
+
+            <TextField maxWidth="300" promptText="Id" fx:id="idField">
+                <VBox.margin>
+                    <fx:reference source="textFieldHorizontalMargin"/>
+                </VBox.margin>
+            </TextField>
+
+            <PasswordField maxWidth="300" promptText="Password" fx:id="passwordField">
+                <VBox.margin>
+                    <fx:reference source="textFieldHorizontalMargin"/>
+                </VBox.margin>
+            </PasswordField>
+
+            <Button text="Login" fx:id="loginButton" onAction="#login"/>
+
+            <StackPane>
+                <ProgressIndicator maxWidth="30" visible="false" fx:id="progressIndicator"/>
+                <Label textFill="red" fx:id="errorMessageLabel"/>
+            </StackPane>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="BASELINE_LEFT" spacing="5">
+            <Label text="  Developed by"/>
+            <Hyperlink text="Naved Ansari" onAction="#openWebsite" fx:id="websiteHyperLink"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+
+

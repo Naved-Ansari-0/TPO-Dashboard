@@ -1,0 +1,94 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<TabPane
+        xmlns="http://javafx.com/javafx/16"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.tpo.HomeController">
+
+    <Tab text="Search" closable="false">
+        <VBox spacing="10">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Enter Roll No:">
+                    <HBox.margin>
+                        <Insets top="10" left="10"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="rollNoField">
+                    <HBox.margin>
+                        <Insets top="10"/>
+                    </HBox.margin>
+                </TextField>
+                <Button text="Search" onAction="#searchByRollNo" fx:id="searchButton">
+                    <HBox.margin>
+                        <Insets top="10"/>
+                    </HBox.margin>
+                </Button>
+                <StackPane>
+                    <HBox.margin>
+                        <Insets top="10"/>
+                    </HBox.margin>
+                    <ProgressIndicator maxWidth="30" visible="false" fx:id="progressIndicator"/>
+                    <Label textFill="red" fx:id="errorMessageLabel"/>
+                </StackPane>
+            </HBox>
+            <ScrollPane VBox.vgrow="ALWAYS">
+                <VBox spacing="10" style="-fx-padding: 10;">
+                    <Label textFill="darkblue" style="-fx-font-size: 15; -fx-font-weight: bold;"
+                           fx:id="personalDataTitleLabel"/>
+                    <HBox>
+                        <Label style="-fx-font-weight: bold;" fx:id="personalDataKeysLabel">
+                            <HBox.margin>
+                                <Insets left="30"/>
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="personalDataValuesLabel">
+                            <HBox.margin>
+                                <Insets left="10"/>
+                            </HBox.margin>
+                        </Label>
+                    </HBox>
+                    <Label textFill="darkblue" style="-fx-font-size: 15; -fx-font-weight: bold;"
+                           fx:id="academicRecordTitleLabel"/>
+                    <HBox>
+                        <Label style="-fx-font-weight: bold;" fx:id="academicRecordKeysLabel">
+                            <HBox.margin>
+                                <Insets left="30"/>
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="academicRecordValuesLabel">
+                            <HBox.margin>
+                                <Insets left="10"/>
+                            </HBox.margin>
+                        </Label>
+                    </HBox>
+                    <Label textFill="darkblue" style="-fx-font-size: 15; -fx-font-weight: bold;"
+                           fx:id="placementStatusTitleLabel"/>
+                    <HBox>
+                        <Label style="-fx-font-weight: bold;" fx:id="placementStatusKeysLabel">
+                            <HBox.margin>
+                                <Insets left="30"/>
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="placementStatusValuesLabel">
+                            <HBox.margin>
+                                <Insets left="10"/>
+                            </HBox.margin>
+                        </Label>
+                    </HBox>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </Tab>
+
+    <Tab text="About" closable="false">
+        <VBox spacing="10" alignment="CENTER">
+            <HBox alignment="BASELINE_CENTER" spacing="5">
+                <Label text="  Developed by"/>
+                <Hyperlink text="Naved Ansari" onAction="#openWebsite" fx:id="websiteHyperLink"/>
+            </HBox>
+            <Button text="Logout" onAction="#logout" fx:id="logoutButton"/>
+        </VBox>
+    </Tab>
+</TabPane>
